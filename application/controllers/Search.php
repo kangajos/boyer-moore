@@ -23,7 +23,8 @@ class Search extends CI_Controller
 		$inserBatch = array();
 		foreach ($getDataset as $key => $value) {
 			$time_start = microtime(true);
-			$dataset = strtolower(preg_replace("/(?![.=$'€%-])\p{P}/u", "", $value->jenis." ".$value->deskripsi));
+			$dataset = strtolower(trim($value->jenis . " " . $value->deskripsi . " " . $value->kandungan . " " . $value->manfaat . " " . $value->klasifikasi));
+			$dataset = preg_replace("/(?![.=$'€%-])\p{P}/u", "", $dataset;
 			//process calculate boyer moore//
 			$similarity = similar_text($query, $dataset, $percent);
 			$time = substr((microtime(true) - $time_start), 0, 4);
