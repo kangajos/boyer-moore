@@ -24,7 +24,7 @@ class Search extends CI_Controller
 		foreach ($getDataset as $key => $value) {
 			$time_start = microtime(true);
 			$dataset = strtolower(trim($value->jenis . " " . $value->deskripsi . " " . $value->kandungan . " " . $value->manfaat . " " . $value->klasifikasi));
-			$dataset = preg_replace("/(?![.=$'€%-])\p{P}/u", "", $dataset;
+			$dataset = preg_replace("/(?![.=$'€%-])\p{P}/u", "", $dataset);
 			//process calculate boyer moore//
 			$similarity = similar_text($query, $dataset, $percent);
 			$time = substr((microtime(true) - $time_start), 0, 4);
