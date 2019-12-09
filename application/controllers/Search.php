@@ -19,7 +19,7 @@ class Search extends CI_Controller
 		$query = preg_replace('/(?:\[test:[^]]+\])(*SKIP)(*F)|(?:\[\w[^]]+\])/', '', $query);
 
 		$this->db->truncate("ensiklopedia_rank");
-		$getDataset = $this->db->select("data_id, jenis")->get("ensiklopedia_data")->result();
+		$getDataset = $this->db->select("data_id, jenis, deskripsi, kandungan, manfaat, klasifikasi,")->get("ensiklopedia_data")->result();
 		$inserBatch = array();
 		foreach ($getDataset as $key => $value) {
 			$time_start = microtime(true);
