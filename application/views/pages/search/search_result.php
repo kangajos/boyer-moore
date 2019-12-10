@@ -86,7 +86,7 @@
 									<button class="btn btn-outline-success">Time: <?=$item->time?> detik</button>
 								</div>
 								<div class="col-md-6">
-									<button class="btn btn-outline-success">Percent: <?=$item->percent_similarity?>%</button>
+									<button class="btn btn-outline-success">Percent: <?=round($item->similarity, 2)?>%</button>
 								</div>
 							</div>
 							<a href="<?= base_url("search/detail/$item->data_id") ?>"
